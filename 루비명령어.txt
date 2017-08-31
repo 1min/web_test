@@ -1,0 +1,379 @@
+ruby 루비파일주소//루비 파일실행
+irb//루비 실행
+
+
+작업중
+print(넣을값)//출력 문자는"" 숫자는 그냥 ;안넣어도됨
+
+자동줄바꿈으로하려면 puts()
+
+2.2.ceil()//자연수로 올림한다.
+2.2.floor()//자연수로 내림한다.
+puts(2.2.ceil())//2.2를 자연수로 반올림하고 출력 줄바꿈
+puts(2**10)//2의10승 루비는 소수점 포함x
+puts(Math::PI)//원주율 파이값
+puts('hello'[0])//hello문자열중 0번째 프로그래밍상 1번째 h글자를 가져온다
+puts('hello'+'world')//helloworld출력
+puts('hi')//hi 3번출력
+puts('hello world'.capitalize())//Hello world출력 [capitailize는 제일 첫글자 대문자출력함수]
+puts('hello world'.upcase())//HELLO WORLD출력[upcase는 문자열 전체를 대문자로 전환]
+puts('hello world'.length())//11출력 length는 문자의(띄움 포함)길이 재줌
+puts('Hello world'.sub('world','programming'))//sub은 변환함수 Hello programming 출력[Hello world에서 world를 찾아 programming으로 변환]
+puts("egoing\'s\"tutorial\"")//\뒤에 있는 특수문자는 일반문자로 취급
+\를 escape라고도 부름
+puts("\\")//\출력
+puts("Hello\nworld")//hello한칸밑에world[\n(newline)은 줄바꿈api]
+puts("Hello\tworld")//hello한칸밑에world[\t(tab)은 줄바꿈api]
+puts("\a")//\a는땡 하는 벨소리(경고음이나는 api)
+print('Hello\nworld')//루비는 작은따움표를 쓰면 \n을 일반문자로 인식 왜냐하면 작은따옴표''안의 문자는 전부 일반문자로 인식
+a=hi guys
+y=haha
+puts(a+y)//hi guys haha
+puts("나는"a+"살아있다")// 나는 haha 살아있다.
+
+
+if true
+puts("code1")
+end //if문 true 일때만 실행 ,end 구분이 있지만 들여쓰기 해주는게 가독성면에서좋음
+동등연산자 a == b              true
+같지않다   a != b              false
+
+real = 11
+input = 12
+if real == input
+puts("hello!")
+else
+   puts("no")
+ end //else문
+
+real_dnjsxmf = 11
+real_dnjsxkf = "ab"
+input = 11
+if real_dnjsxmf == input
+puts("hello!,dnjsxmf")
+else
+  if real_dnjsxkf == input
+  puts("hello!,dnjsxkf")
+else
+  puts("누구냐")
+ end
+end//if else문
+
+real_dnjsxmf = 11
+real_dnjsxkf = "ab"
+input = 33
+if real_dnjsxmf == input
+puts("hello!,dnjsxmf")
+elsif real_dnjsxkf == input
+  puts("hello!,dnjsxkf")
+else
+  puts("누구냐")
+ end//elsif간결문 elseif가 루비에선 elsif
+
+puts("입력해주세요")
+in_str = gets.chomp()
+puts(in_str.upcase() +"world!")//get.chomp는 입력하시오의 의미 
+.upcase()는 파이썬의 .upper()기능 소문자를 대문자로바꿈
+
+puts("아이디를 입력해주세요")
+in_str = gets.chomp()
+real_dnjsxmf = "11"
+real_dnjsxkf = "ab"
+if real_dnjsxmf == in_str
+puts("hello!,dnjsxmf")
+elsif real_dnjsxkf == in_str
+  puts("hello!,dnjsxkf")
+else
+  puts("누구냐")
+ end//입력 조건문 응용, 11에 ""붙이는 이유는 데이터 타입이 문자기 때문 도스창에서 11만치면 숫자타입이기 때문에 입력값에 문자와 매치가 안됨
+
+puts("아이디를 입력해주세요")
+in_str = gets.chomp()
+real_dnjsxmf = "11"
+real_dnjsxkf = "ab"
+if real_dnjsxmf == in_str or real_dnjsxkf == in_str
+puts("hello!")
+else
+  puts("누구냐")
+ end //or문 응용
+
+puts("아이디를 입력해주세요")
+input_id = gets.chomp()
+puts("비밀번호를 입력해주세요")
+input_pwd = gets.chomp()
+real_id = "egoing"
+real_pwd = "11"
+if real_id == input_id
+  if real_pwd == input_pwd
+    puts("Hello!")
+  else
+    puts("잘못된 비밀번호입니다")
+  end
+else
+  puts("잘못된 아이디입니다")
+end//이중if문응용
+
+puts("아이디를 입력해주세요")
+input_id = gets.chomp()
+puts("비밀번호를 입력해주세요")
+input_pwd = gets.chomp()
+real_id = "egoing"
+real_pwd = "11"
+if real_id == input_id and real_pwd == input_pwd
+    puts("Hello!")
+else
+  puts("로그인에 실패했습니다")
+end//위의 and 축약문
+
+OR 진리표
+True	or	True	True
+True	or	False	True
+False	or	True	True
+False	or	False	False
+
+ AND 진리표
+True	and	True	True
+True	and	False	False
+False	and	True	False
+False	and	False	False
+
+Not 진리표
+not	True	False
+not	False	True
+
+주석 #
+주석 #뒤에 있는걸 전부 주석처리 코멘트 달거나 코드줄 무효화
+여러줄 할 시에는 =begin여는부분 =end닫는부분 /* */랑 같음
+
+아톰 에딧-토글코맨트-현재선택된코맨트 주석처리-재시도하면 보임
+
+puts(names.class)#.class는 데이터타입확인 함수
+
+names=['dnjsxmf','dnjsxkf','dnjsxmfsla']
+puts(names.class)
+puts(names[0])
+names[0] = '1min'
+print(names)
+
+print(names)//컨테이너(배열) 배열처리시[] names[0]='busan'
+과 같이 변수 변경도 가능 ,배열은 0부터시작! print를 쓰는 이유는 puts 쓸시 배열안의 값이 다 줄바꿈됨
+
+아래는 출력값
+
+Array
+dnjsxmf
+["1min", "dnjsxkf", "dnjsxmfsla"]
+
+arr=[1,2,3,4,5,6]
+puts(arr[2])//3
+puts(arr[1..4])//2345
+puts(arr.length)//6
+puts(arr.first)//1
+puts(arr.last)//6
+arr.push(7)<-배열 원소 넣기
+print(arr)//[1,2,3,4,5,6,7]
+arr.delet_at(2)<-배열 원소 삭제
+print(arr)//[1,3,4,5,6,7]
+
+al = ['A', 'B', 'C', 'D']
+puts(al.length) # 4
+al.push('E')
+print(al) # ["A", "B", "C", "D", "E"]
+al.delete_at(0)
+print("\n")
+print(al) # ["B", "C", "D", "E"]//사용설명서
+
+실행오류시 루비온 레일스
+
+출력값 
+4
+["A", "B", "C", "D", "E"]
+["B", "C", "D", "E"]
+
+while false do
+ puts('hello world')
+ end
+ puts('after while')//반복문
+
+after while만 출력
+
+i=0
+while i < 3:
+    print('hello world')
+    i=i+1//hello world 3번출력
+
+i = 0
+while i < 10 do
+    puts('puts("Hello world '+(i*9).to_s()+'")')
+    i = i + 1
+end//9의 배수 10번출력 .to_s()는 앞의 괄호를 정수로인식, {i*9}로 대체하는 방법도있다
+
+i = 0
+while i < 10 do
+    if i == 4
+        break
+      end
+    puts(i)
+    i = i + 1
+  end
+print('after')//1,2,3,after출력
+
+members = ['egoing','leezche','graphittie']
+
+for member in members do
+    puts(member)
+end//for문 for 변수 in 배열:넣어서 변수를 출력하면 배열안에 있는 원소수 만큼 반복된 값이 출력됨
+
+puts자리에 put('hello')를 넣으면 배열의 총수가 3이니 3번 hello가 반복된다
+
+for item in [5,6,7,8,9,10] do
+    puts(item)
+end//배열변수대신 배열을 in 뒤에 넣어도된다
+
+for item in (5..10) do
+    puts(item)
+end//5~10까지 출력 루비의 ..는 파이썬의 range()와 같다.
+
+puts("아이디를 입력해주세요")
+input_id = gets.chomp()
+members = ['egoing', 'k8805', 'leezche']
+for member in members do
+    if member == input_id
+        puts('Hello!, '+member)
+        exit
+    end
+end
+puts('Who are you?')//id로그인 루비는 파이썬과 다르게 exit(프로그램종료)가 있어서 import sys구문 필요없음
+
+def a3()
+    puts('bbb')
+  end
+a3()//함수, 함수정의는 def(define정의하다) bbb출력
+
+루비는 while 문, for문에서 :를 do로 바꿈 조건문에서는 :를 그냥지움
+
+def a3()
+    return 'aaa'
+  end
+print(a3())//return은 값을 반환해줌()함수내return밑줄은 실행되지않음!!밑에 print('b')가 있어도 aaa만출력됨
+
+def a(num)
+    return 'a'*num
+end
+puts(a(3))//괄호안의 숫자 함수실행 출력값aaa
+
+def make_string(str, num)
+    return str*num
+end
+puts(make_string('abc',2))//괄호안에 여러개도 가능 출력값 abcabc
+
+puts("아이디를 입력해주세요")
+input_id = gets.chomp()
+
+def login(id)
+  members = ['egoing', 'k8805', 'leezche']
+  for member in members do
+      if member == id
+        return true
+      end
+  end
+  return false
+  end
+if login(input_id)
+ puts('hello!'+input_id)
+else
+  puts("who are you")
+end//함수 응용 로그인
+
+루비는 대소문자조심 안해도됨
+
+루비에서는 함수정의 에서 괄호를 생략가능하다
+
+def f1()
+  return 'f1'
+end
+puts(f1())
+def f2
+  return 'f2'
+end
+puts(f2())
+def f3
+  return 'f3'
+end
+puts(f3)
+def f4(a1)
+  return a1
+end
+puts(f4('f4'))
+def f5 a1
+  return a1
+end
+puts(f5 'f5')
+puts f5 'f5'
+def f6
+  return 'f6'
+end
+puts f6
+def f7
+  'f7'
+end
+puts f7
+def f8
+  a = 1
+  b = 2
+  a + b
+end
+puts f8//루비에서는 축약이 가능하다. f1()->f1 등등
+
+Methods=function
+
+5.times() {puts 'times'}//출력값 times times times times times
+2.times {puts '2times'}//출력값 2.times w.times
+3.upto(5) {|item| puts item} //블럭 출력값 3,4,5 |item| item 빼고 puts 뒤에 3을넣으면 3,3,3
+
+5.times() {|i| puts i}
+
+i=0
+while i <5
+  puts i
+i=i+1
+end// 특정쓰임에서 while을 대체할 수 있는 times 블럭함수
+
+arr = [1,2,11,10,34]
+arr.delete_if(){|item|
+item > 7
+}
+puts arr//삭제delete 블럭함수
+
+arr = [1,2,11,10,34]
+arr.delete_if() do |item| 
+  item > 7
+end
+  puts arr//도 가능하다 do={ end=}
+
+puts(Math.sqrt(16))//제곱근 함수
+
+모듈은 함수들의 그룹
+
+def egoing_a()
+  return 'a'
+end
+#엄청 많은 코드
+def k8805_a()
+  return 'B'
+end
+#엄청 많은 코드
+puts(egoing_a())//오버라이트
+
+name1 = String.new('egoing')
+name2 = String.new('k8805')
+puts(name1.reverse())
+puts(name2.reverse())
+puts(name1.upcase())
+puts(name1.size())
+names = Array.new()
+names.push('egoing')
+names.push('k8805')
+puts(names)
+puts(names.join(','))
+//객체지향 string.new는 클래스 name번호 오른쪽 혹은 name번호는 인스턴스 reverse, size, upcase 등은 string클래스와 연관된 매써드(함수)

@@ -1,0 +1,261 @@
+python 파이썬파일주소//파이썬 파일실행
+python//파이썬 실행
+
+파이썬 사용설명서볼것
+
+작업중
+print(넣을값)//출력 문자는"" 숫자는 그냥 ;안넣어도됨
+
+파이썬은 자동 줄바꿈
+
+import math//수학 함수넣기
+math.ceil(2.24)//자연수로 올림한다
+math.floor(2.24)//자연수로 내림한다.
+print(math.ceil(2.24))//올림한걸 출력
+print(math.pow(2,10))//2의10승 pow는 제곱 소수점1자리 까지표시
+print(math.pi)//파이값
+print('hello'[0])//hello문자열중 0번째 프로그래밍상 1번째 h글자를 가져온다
+print('hello'+'world')//helloworld출력
+print('hi')//hi 3번출력
+print('hello world'.capitalize())//Hello world출력 [capitailize는 제일 첫글자 대문자출력함수]
+print('hello world'.upper())//HELLO WORLD출력[upper는 문자열 전체를 대문자로 출력]
+print('hello world'.__len__())//11출력 __len__는 문자의(띄움 포함)길이 재줌
+print(len('hello world'))//11출력 len은 괄호안 문자의 갯수를 알려줌 위와방식은 다르지만 값은 같다.
+print('Hello world'.replace('world','programming'))//replace은 변환함수 Hello programming 출력[Hello world에서 world를 찾아 programming으로 변환]
+print("egoing\"s"tutorial\"")//\뒤에 있는 특수문자는 일반문자로 취급
+print("\\")//\출력
+print("Hello\nworld")//hello한칸밑에world[\n(newline)은 줄바꿈api]
+print("Hello\tworld")//hello한칸밑에world[\t(tab)은 줄바꿈api]
+puts("\a")//\a는땡 하는 벨소리(경고음이나는 api)
+파이썬은 print('Hello\nworld')나 print("Hello\nworld")나 차이없음 왜냐하면 큰따옴표, 작은따옴표 둘의 기능이 큰차이없음
+변수사용
+a="hi guys"
+y="haha"
+print(a+y)//hi guys haha
+print("나는"a+"살아있다")// 나는 haha 살아있다.
+
+조건문 conditional statements
+
+if True://파이썬은 :붙여야함
+    print("code1")//if문
+
+if False:
+    print("code1")
+    print("code2")
+print("code3")//code3만 출력됨 공백이 하나의 if그룹으로 봄
+
+동등연산자 a == b              true
+같지않다   a != b              false
+
+real = 11
+input = 12
+if real == input:
+    print("hi")
+else:
+    print("waru")//else문
+
+real_dnjsxmf = 11
+real_dnjsxkf = "ab"
+input = 11
+if real_dnjsxmf == input:
+ print("hello!, dnjsxmf")
+elif real_dnjsxkf == input:
+  print("hello!,dnjsxkf")
+else:
+  print("누구냐")//else if문 파이썬에서는 eles if가 elif
+
+in_str = input("입력해주세요")
+print(in_str+"world!")//input문=scanf  대입연산자 오른쪽부터실행
+입력해주세요 부분이 젤 처음 실행됨(보임) 파이썬만의 기능
+in_str.upper()//~.upper()는 앞의 in_str 입력값을 대문자로 만들어줌
+
+print(type(변수))// 데이터 타입확인하기
+in_str = input("입력해주세요\n")
+real_dnjsxmf = "11"
+real_dnjsxkf = "ab"
+if real_dnjsxmf == in_str:
+ print("hello!, dnjsxmf")
+elif real_dnjsxkf == in_str:
+  print("hello!,dnjsxkf")
+else:
+  print("누구냐")//입력 if문 11에 ""붙이는 이유는 데이터 타입이 문자기 때문 도스창에서 11만치면 숫자타입이기 때문에 입력값에 문자와 매치가 안됨
+
+in_str = input("입력해주세요\n")
+real_dnjsxmf = "egoing"
+real_dnjsxkf = "k8805"
+if real_dnjsxmf == in_str or real_dnjsxkf == in_str:
+print("hello!")
+else:
+  print("누구냐")//or문 응용
+
+input_id = input("아이디를 입력해주세요.\n")
+input_pwd = input("비밀번호를 입력해주세요.\n")
+real_id = "egoing"
+real_pwd = "11"
+if real_id == input_id:
+    if real_pwd == input_pwd:
+        print("Hello!")
+    else:
+        print("잘못된 비밀번호입니다")
+else:
+    print("잘못된 아이디입니다")//이중 if문
+
+input_id = input("아이디를 입력해주세요.\n")
+input_pwd = input("비밀번호를 입력해주세요.\n")
+real_id = "egoing"
+real_pwd = "11"
+if real_id == input_id and real_pwd == input_pwd:
+    print("Hello!")
+else:
+    print("로그인에 실패했습니다")// 위의 코딩 and로 통합
+
+
+OR 진리표
+True	or	True	True
+True	or	False	True
+False	or	True	True
+False	or	False	False
+
+ AND 진리표
+True	and	True	True
+True	and	False	False
+False	and	True	False
+False	and	False	False
+
+Not 진리표
+not	True	False
+not	False	True
+
+주석 #뒤에 있는걸 전부 주석처리 코멘트 달거나 코드줄 무효화
+여러줄 할 시에는 '''여는부분 '''닫는부분 /* */랑 같음 변수지정하면 실행이 되긴하기 때문에 주의
+대신 문자열로 쓸시 여러줄을 변수로 지정가능. <-개이득인 부분
+
+아톰 에딧-토글코맨트-현재선택된코맨트 주석처리-재시도하면 보임
+
+print(type('egoing'))
+name = 'egoing'
+print(name)
+print(type(['egoing','leezche','graphittie']))
+names = ['egoing','leezche','graphittie']
+print(names)
+print(names[0])
+egoing = ['programmer','seoul','25',False]
+egoing[1] = 'busan'
+print(egoing)#파이썬 배열 컨테이너 배열처리시는 [] egoing[1]='busan'
+과 같이 변수 변경도 가능 type은 데이터타입확인함수 ,배열은 0부터시작!
+
+아래는 출력값
+<class 'str'>
+egoing
+<class 'list'>
+['egoing', 'leezche', 'graphittie']
+egoing
+['programmer', 'busan', '25', False]
+
+al = ['A','b','C','D']
+print(len(al))
+al.append('E')
+print(al)
+del(al[0])
+print(al)//api활용
+
+출력값
+4
+['A', 'b', 'C', 'D', 'E']
+['b', 'C', 'D', 'E']
+
+while False:
+ print('hi')
+print('after while')// 반복문 after while만 출력 반복문은 트루에서만 실행
+
+i=0
+while i < 3:
+    print('hello world')
+    i=i+1// hello world 3번출력
+
+i = 0
+while i < 10:
+    print('print("Hello world '+str(i*9)+'")')
+    i = i + 1//9의배수 10개 출력, str()는 괄호안의 문자를 정수로 인식 
+
+i = 0
+while i < 10:
+    if i != 4:
+        print(i)
+    i = i + 1//조건문+반복문 print 0,1,2,3,5,6,7,8,9
+
+i = 0
+while i < 10:
+    if i == 4:
+        break
+    print(i)
+    i = i + 1
+print('after')// 0 1 2 3 after출력
+
+members = ['egoing','leezche','graphittie']
+
+for member in members:
+    print(member)//for문 for 변수 in 배열:넣어서 변수를 출력하면 배열안에 있는 원소수 만큼 반복된 값이 출력됨
+
+print자리에 print('hello')를 넣으면 배열의 총수가 3이니 3번 hello가 반복된다
+
+for item in [5,6,7,8,9,10]: print(item) //배열변수 대신 배열 자체를 넣어도된다
+
+for item in range(5):
+	print(item)//0,1,2,3,4 즉 range안의 숫자-1만큼 혹은 총수만큼 출력
+for item in range(5,11):
+	print(item)//을 할경우 5~10까지 출력
+
+input_id = input("아이디를 입력해주세요.\n")
+members = ['egoing', 'k8805', 'leezche']
+for member in members:
+    if member == input_id:
+        print('Hello!, '+member)
+        import sys
+        sys.exit()
+print('Who are you?')//아이디 로그인, import sys와 sys.exit는 앞의 구문 실행후 프로그램 종료가 되는것임
+
+def a3():
+    print('bbb')
+    print('bbb')함수, 함수정의는 def(define정의하다) bbb줄바꿈 bbb출력
+a3()//
+
+def a3():
+    return 'aaa'
+print(a3())//return은 값을 반환해줌()함수내return밑줄은 실행되지않음!!밑에 print('b')가 있어도 aaa만출력됨
+
+def a(num):
+    return 'a'*num
+print(a(3))//괄호안의 숫자 함수실행 출력값aaa
+
+def make_string(str, num):
+    return str*num
+print(make_string('abc',2))//괄호안에 여러개도 가능 출력값abc abc
+
+input_id=input("아이디를 입력해주세요")
+
+def login(id):
+  members = ['egoing', 'k8805', 'leezche']
+  for member in members :
+      if member == id:
+        return True
+  return False
+
+if login(input_id):
+    print('hello!'+input_id)
+else:
+    print("who are you")//로그인 함수 응용
+
+파이썬은 대소문자조심
+
+import math
+print(math.ceil(2.3))
+print(math.floor(2.9))
+print(math.sqrt(16))//모듈, import는 해당 모듈을 삽입 ceil()이상의 자연수 floor()이하의 자연수 sqrt()제곱근
+def egoing_a():
+    return 'a'
+#엄청 많은 코드
+def k8805_a():
+    return 'B'
+#엄청 많은 코드
+print(egoing_a())//오버라이트

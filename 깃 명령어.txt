@@ -1,0 +1,88 @@
+git //사용할수 있는 git 명령어보기
+pwd//현재주소보기
+git init// 깃 저장소 초기화 or생성
+git init 해당저장소이름// 해당저장소 이름으로 디렉토리와 저장소생성
+ls -al //디렉토리 내역
+cd .. //상위 디렉토리로 이동
+git log// 깃 기록
+git add 이름//커밋 대기할 파일추가
+git add 디렉토리명/add할 파일명 // 해당 디렉토리에 있는 파일명을 add한다
+git commit //커밋
+cat 파일명//파일내용보기
+cp 복사될파일명 복사된파일이름// 복사될파일을 복제해서 복사된파일이름으로 만듬
+cp 복사될파일명 디렉토리/복사된파일명 // 해당디렉토리에 복사된 파일명으로 복사될 파일을 복사
+:wq //파일상태에서 저장하고 나가기
+q// 나가기
+vim 파일명//vim 에디터로 파일 추가편집
+git status// 깃 파일 상태보기
+git config --global user.name 닉네임//깃 프로필 이름설정
+git config -- global user.email 이메일이름// 깃 프로필 이메일설정
+cd 파일위치// 해당 파일로 디렉토리 옮기기 복사시 \를 /고쳐야함
+mkdir 파일명// 디렉토리 안에 파일만들기
+git init// 현재 디렉토리를 깃의 저장소로 만듬
+git log -p// 최신 이전버젼간의 소스상 차이 확인하며 로그보기 ---는 이전버젼 +++은 최신버젼
+git log 커밋주소//해당버젼과 그 이전 커밋을 보여줌
+git diff 커밋주소..커밋주소//해당 두 버젼간의 커밋차이를 보여줌
+git diff //이전작업과 현재작업간의 차이 보여줌=커밋하기전에 작업내용(실수) 할 수 있음
+clear//cmd창 정리
+git reset 버젼코드 --hard//경고* 자기 컴퓨터의 파일에만할것)해당버젼위의 최신버젼을 삭제(시각적으로만)하고 해당버젼으로 돌아감
+git revert 버젼코드//버전 id의 커밋을 취소한 내용을 새로운 버전으로 만드는 명령, 쉽게말해 해당 코드의 실행내역 삭제하고 이내역을 커밋
+
+git commit --help//commit에 대한 도움말(옵션)
+git commit -a// 해당 디렉토리의 변경되거나 삭제된파일 모두 커밋(add과정을 생략할 수 있음 그러나 여태 단 한번도add안된건 add안됨)
+git commit -am "11"//11라는 내역으로 모든파일 커밋 (add생략)
+
+오브젝트파일 3종류
+blob: 파일의 내용
+tree: blob에 대한 정보
+commit: (커밋)오브젝트 아이디
+
+git commit -m "커밋입력내용적기"//(개별)""안의 내용을 삽입해서 에디터안드가고 바로커밋
+
+git branch//branch 보기 (master는 초기값)
+git branch 브렌치이름// 브렌치 이름으로 branch 생성
+git checkout 확인할브렌치이름//해당 branch로 접속(확인)
+git log --branches --decorate//저장소에있는 모든 branch보기
+git log --branches --decorate --graph //위의 명령과 함께 빨간줄(브렌치구분)생김
+git log --branches --decorate --graph --oneline//줄로보여줌
+git log master..다른브렌치이름//마스터와 해당브렌치간의 차이보여줌 master에는 없고 다른 브렌치에만 있는걸 보여줌 반대도가능
+git log -p master..다른브렌치이름//위의 명령어를 소스코드(내용)까지 보여줌
+git merge exp(해당브렌치)//현재 브렌치(master등)에서 exp해당브렌치의 내용을 master로 가져와 합친다.
+git branch -d exp(해당브렌치)// 해당 브렌치 삭제
+git checkout -b 해당브렌치/해당브렌치를 생성하고 접속
+git stash --help//stash 명령어도움말
+git stash// 깃 스태쉬 - 커밋대기or숨기기(수정된파일) 다른 브렌치에서도 영향안주고 작업가능
+git stash apply // 스태쉬한 파일 복원 리스트중 젤위 스태쉬[0]을 적용
+git stash list//스태쉬한 기록보기-스태쉬를 명시적으로 삭제하지 않는한 기록되있음
+git reset --hard HEAD//가장최신상태로 복원(초기화)
+git stash drop//리스트의 가장최신 스태쉬삭제
+git stash apply;git stash drop;//생성하고 지움
+git stash pop//스태쉬 받아오고 지움 위와같은 명령어
+stash는 최소한 버젼관리되는 파일만가능(최소1번 커밋한 파일,새로생성된파일은 X)
+git clone 복제하려는프로젝트원격저장소주소 gitsrc(만들 저장소이름)//깃허브에 있는 프로젝트(fork) 현재디렉토리에 gitsrc를 만들어 그안에 복사
+git log --reverse//로그 거꾸로보기
+git checkout 로그의커밋아이디//해당 로그의 커밋 브렌치로감(이후꺼는 감춰짐)
+git remote//원격저장소 확인 보통 (기본)origin
+git remote add 원격저장소이름 깃허브원격저장소주소//원격저장소 애드
+git remote -v//상세보기
+git remote remove 삭제할원격저장소//원격저장소 지우기
+git push -u 원격저장소이름 master//원격저장소에 로컬저장소 파일 업로드
+git push//위의 명령어 초기에 한번실행후 git push만하면 커밋한후 바로 업로드 할 수 있다.
+git clone 원격저장소주소 .//.은 현재 디렉토리를 뜻함 현재디렉토리에 원격저장소 파일 로드(동기화 지역저장소+연결저장소 보통 origin 이름부여)
+git commit --amend//이전 깃 커밋내용수정 단! 원격저장소로 push하기 전에해야함
+git pull //원격저장소 내용을 지역저장소로 땡겨옴
+cd ~//홈디렉토리로이동
+cd ~/.ssh/홈디렉토리 안에 있는 .ssh로 이동
+
+
+
+
+
+
+
+
+
+
+
+
+
