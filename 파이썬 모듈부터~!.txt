@@ -1,0 +1,395 @@
+파이썬 선택!!! 모듈부터 늦게 알았는데 상속안쓰면 (object)없어도됨
+egoing.py
+
+def a():
+    return 'a'
+def b():
+    return 'b'
+def c():
+    return 'c'
+k8805.py
+
+
+def a():
+    return 'B'
+ 3.py
+
+
+from egoing import a as z
+import k8805 as k
+print(z())
+print(k.a())//모듈 삽입과 변환 as는 함수이름 바꾸기 from은 해당 파일 import는 파일의 함수 삽입
+
+! 같은 내용의 파일이 있을경우 함수파일을 사용하면 쉽게정리되며 함수파일 수정시 다수의 파일이 함께수정되므로 개이득인 부분이다.
+
+auth.py
+
+
+def login(_id):
+    members = ['egoing', 'k8805', 'leezche']
+    for member in members:
+        if member == _id:
+            return True
+    return False
+5.py
+
+
+import auth
+input_id = input("아이디를 입력해주세요.\n")
+if auth.login(input_id):
+    print('Hello, '+input_id)
+else:
+    print('Who are you?')//모듈을 사용한 로그인
+
+class Cal(object):
+    def __init__(self, v1, v2):
+        print(v1, v2)
+ 
+c1 = Cal(10,10)
+#print(c1.add())
+#print(c1.subtract())
+c2 = Cal(30,20)
+#print(c2.add())
+#print(c2.subtract())//Cal 클래스 생성자 파이썬은 클래스생성시(object)붙여야됨
+
+class Cal(object):
+    def __init__(self, v1, v2):
+        print(v1, v2)
+
+c1 = Cal(10,10)
+#print(c1.add())
+#print(c1.subtract())
+c2 = Cal(30,20)
+#print(c2.add())
+#print(c2.subtract())//__init__은 생성자라 부르고 초기값을 지정한다. 클레스 생성 self라는 매개변수를 만들어야 v1이 첫번째 괄호안 숫자가됨
+
+class Cal(object):
+    def __init__(self, a1, v2):
+        self.a1 = a1
+        self.v2 = v2
+
+    def add(self):
+        return self.a1+self.v2
+
+    def subtract(self):
+        return self.a1-self.v2
+c1 = Cal(10,10)
+print(c1.add())
+print(c1.subtract())
+c2 = Cal(30,20)
+print(c2.add())
+print(c2.subtract())//객체지향 self같이 앞에 매개변수 꼭써야됨 파이썬의 특징. 망할 파이썬,. 라즈베리만 아니여도 버리는건데,.
+
+def add(v1,v2)
+  return v1+v2
+end
+def subtract(v1,v2)
+  return v1-v2
+end
+p add(10,10)
+p subtract(10,10)
+p add(30,20)
+p subtract(30,20)//위의 코드를 객체지향(클래스 함수사용) 하지않을경우
+
+class C:
+    def __init__(self,v):
+        self.value = v
+
+c1=C(10)
+print(c1.value)
+c1.value=20
+print(c1.value)//클래스 복습 10과 20 출력
+
+class C:
+    def __init__(self,v):
+        self.value = v
+    def show(self):
+        print(self.value)
+    def getvalue(self):
+        return self.value
+    def setvalue(self,v):
+        self.value = v
+
+c1 = C(10)
+print(c1.getvalue())
+c1.setvalue(20)
+print(c1.getvalue())//get매써드 set매써드 set매써드는 get매써드 안의 매개변수를 다시정의함 바깥에서 정의하는 c1.value=20를 get,set을 이용해 클래스 안에서 정의한다는게 다름
+
+원레는 클래스에서 self.value=v로 정의됬다면
+c1=c(10)
+print(c1.value)
+c1.value=20
+print(c1.value)와 다를바없음
+
+class Cal(object):
+    def __init__(self, v1, v2):
+        if isinstance(v1, int):
+            self.v1 = v1
+        if isinstance(v2, int):
+            self.v2 = v2
+    def add(self):
+        return self.v1+self.v2
+    def subtract(self):
+        return self.v1-self.v2
+    def setV1(self, v):
+        if isinstance(v, int):
+            self.v1 = v
+    def getV1(self):
+        return self.v1
+c1 = Cal(10,10)
+print(c1.add())
+print(c1.subtract())
+c1.setV1('one')
+c1.v2 = 30
+print(c1.add())
+print(c1.subtract())//set get응용 isinstance(,int)는 해당 괄호안 수가 정수인 인트 인스턴스인가 확인하는 조건문함수
+
+class C(object):
+    def __init__(self, v):
+        self.__value = v
+    def show(self):
+        print(self.__value)
+c1 = C(10)
+#print(c1.__value)
+c1.show()//파이썬을 외부에서 못바꾸게value앞에 __붙임
+
+class Class1(object):
+    def method1(self): return 'm1'
+c1 = Class1()
+print(c1, c1.method1())
+ 
+class Class3(Class1):
+    def method2(self): return 'm2'
+c3 = Class3()
+print(c3, c3.method1())
+print(c3, c3.method2())
+ 
+class Class2(object):
+    def method1(self): return 'm1'
+    def method2(self): return 'm2'
+c2 = Class2()
+print(c2, c2.method1())
+print(c2, c2.method2())//Class3는 Class1을 상속하므로 method1을 이미 포함한다. print는 여러개 호출가능 main 머시기머시기출력값
+
+class Cal(object):
+    def __init__(self, v1, v2):
+        if isinstance(v1, int):
+            self.v1 = v1
+        if isinstance(v2, int):
+            self.v2 = v2
+    def add(self):
+        return self.v1+self.v2
+    def subtract(self):
+        return self.v1-self.v2
+    def setV1(self, v):
+        if isinstance(v, int):
+            self.v1 = v
+    def getV1(self):
+        return self.v1
+class CalMultiply(Cal):
+    def multiply(self):
+        return self.v1*self.v2
+class CalDivide(CalMultiply):
+    def divide(self):
+        return self.v1/self.v2
+c1 = CalMultiply(10,10)
+print(c1.multiply())
+c2=CalDivide(20,10)
+print(c2, c2.add())
+print(c2, c2.multiply())
+print(c2, c2.divide())//상속 응용 함수뿐아니라 변수도 상속받음
+
+class Cs:
+    @staticmethod
+    def static_method():
+        print("Static method")
+    @classmethod
+    def class_method(cls):
+        print("Class method")
+    def instance_method(self):
+        print("Instance method")
+i = Cs()
+Cs.static_method()
+Cs.class_method()
+i.instance_method()//클래스매써드, 파이썬은 클래스매서드에 오리지널 클래스매서드와 스태틱(정적)매서드 두가지가 있으며 장식자 @이 있어야하며 인스턴스 매써드나 클래스 매서드나 함수이름은 상관없지만 장식자를 쓸땐 @staticmethod와@classmethod로 클래스매서드 두종류를 규정한다. 
+그리고 오리지널 클래스 매서드는 인스턴스매서드와 같이 cls같은 매개변수가 필요하다
+클래스매서드는 클래스와 함께 혼자쓰이고
+인스턴스 매서드는 i같은 여러 인스턴스와 함께쓰인다. class_member 1.rb파일의 Date.today()참고
+
+class Cs:
+    count = 0
+    def __init__(self):
+        Cs.count = Cs.count + 1
+    @classmethod
+    def getCount(cls):
+        return Cs.count
+i1 = Cs()
+i2 = Cs()
+i3 = Cs()
+i4 = Cs()
+print(Cs.getCount())//클래스함수의 변수는 인스턴스에도 사용할 수 있다. 파이썬은 최초 변수설계시 CS.count가 아니라 count라고 정의해야함 즉클래스와.빼고
+클래스매써드는 매개인자 있어야됨, cls=Cs
+
+class Cal(object):
+    _history = []
+    def __init__(self, v1, v2):
+        if isinstance(v1, int):
+            self.v1 = v1
+        if isinstance(v2, int):
+            self.v2 = v2
+    def add(self):
+        result = self.v1+self.v2
+        Cal._history.append("add : %d+%d=%d" % (self.v1, self.v2, result))
+        return result
+    def subtract(self):
+        result = self.v1-self.v2
+        Cal._history.append("subtract : %d-%d=%d" % (self.v1, self.v2, result))
+        return result
+    def setV1(self, v):
+        if isinstance(v, int):
+            self.v1 = v
+    def getV1(self):
+        return self.v1
+    @classmethod
+    def history(cls):
+        for item in Cal._history:
+            print(item)
+class CalMultiply(Cal):
+    def multiply(self):
+        result = self.v1*self.v2
+        Cal._history.append("multiply : %d*%d=%d" % (self.v1, self.v2, result))
+        return result
+class CalDivide(CalMultiply):
+    def divide(self):
+        result = self.v1/self.v2
+        Cal._history.append("divide : %d/%d=%d" % (self.v1, self.v2, result))
+        return result
+c1 = CalMultiply(10,10)
+print(c1.add())
+print(c1.multiply())
+c2 = CalDivide(20,10)
+print(c2, c2.add())
+print(c2, c2.multiply())
+print(c2, c2.divide())
+Cal.history()//계산기 []는 배열로 변환 append는 배열안의 끝수 추가 ("add : %d+%d=%d" %(self.v1,+self.v2,result))는 C와 같은형식 다만,로 수와문자를 구분하던게 ()로 구분됨
+
+class C1:
+    def m(self):
+        return 'parent'
+
+class C2(C1):
+    pass
+
+o = C2()
+print(o.m())//상속자인 C2가 아무함수도 더추가하지 않을경우 쓰려면 pass넣어야함
+
+class C1:
+    def m(self):
+        return 'parent'
+class C2(C1):
+    def m(self):
+        return super().m() + ' child'
+    pass
+o = C2()
+print(o.m())//이전의 부모 클래스의 이름이 같은 함수를 사용하려면 super().부모클래스 함수명() 을 사용해야한다.
+
+class Cal(object):
+    _history = []
+    def __init__(self, v1, v2):
+        if isinstance(v1, int):
+            self.v1 = v1
+        if isinstance(v2, int):
+            self.v2 = v2
+    def add(self):
+        result = self.v1+self.v2
+        Cal._history.append("add : %d+%d=%d" % (self.v1, self.v2, result))
+        return result
+    def subtract(self):
+        result = self.v1-self.v2
+        Cal._history.append("subtract : %d-%d=%d" % (self.v1, self.v2, result))
+        return result
+    def setV1(self, v):
+        if isinstance(v, int):
+            self.v1 = v
+    def getV1(self):
+        return self.v1
+    @classmethod
+    def history(cls):
+        for item in Cal._history:
+            print(item)
+    def info(self):
+        return "Cal => v1 : %d, v2 : %d" % (self.v1, self.v2)
+class CalMultiply(Cal):
+    def multiply(self):
+        result = self.v1*self.v2
+        Cal._history.append("multiply : %d*%d=%d" % (self.v1, self.v2, result))
+        return result
+    def info(self):
+        return "CalMultiply => %s" % super().info()
+class CalDivide(CalMultiply):
+    def divide(self):
+        result = self.v1/self.v2
+        Cal._history.append("divide : %d/%d=%d" % (self.v1, self.v2, result))
+        return result
+    def info(self):
+        return "CalDivide => %s" % super().info()
+ 
+c0 = Cal(30, 60)
+print(c0.info())
+c1 = CalMultiply(10,10)
+print(c1.info())
+c2 = CalDivide(20,10)
+print(c2.info())//override+class member 응용 info추가   %s는 %d의 문자버젼
+
+1.py에
+import lib
+obj=lib.A()
+print(obj.a())
+
+lib.py에
+class A:
+    def a(sels):
+        return 'a'//모듈과 객체의 응용 걍 객체를 모듈에 넣어쓰는거임
+
+class C1():
+    def c1_m(self):
+        print("c1_m")
+class C2():
+    def c2_m(self):
+        print("c2_m")
+class C3(C1, C2):
+    pass
+class C4(C3):
+    pass
+
+c = C4()
+c.c1_m()
+c.c2_m()//다중상속, 그냥 상속쓸때 ,로 구분해서 여러개 쓰면 됨
+다중상속의 문제점은 C1과 C2에 똑같은 함수를 포함되면 C1만됨 이는 상속할때 C1,C2를 적을때 순서에 따라 순위가 높은게 우선된다
+우선순위 보는법은 print(클래스.__mro__)
+
+class CalMultiply():
+    def multiply(self):
+        return self.v1*self.v2
+class CalDivide():
+    def divide(self):
+        return self.v1/self.v2
+class Cal(CalMultiply, CalDivide):
+    def __init__(self, v1, v2):
+        if isinstance(v1, int):
+            self.v1 = v1
+        if isinstance(v2, int):
+            self.v2 = v2
+    def add(self):
+        return self.v1+self.v2
+    def subtract(self):
+        return self.v1-self.v2
+    def setV1(self, v):
+        if isinstance(v, int):
+            self.v1 = v
+    def getV1(self):
+        return self.v1
+c = Cal(100, 10)
+print(c.add())
+print(c.multiply())
+print(c.divide())//다중상속으로 클래스 함수들 합치기

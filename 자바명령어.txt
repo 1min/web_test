@@ -107,6 +107,7 @@ if(true or false){if then절}
             System.out.println("two");
         case 3:
             System.out.println("three");
+	System.out.println("default");
         }
          
         System.out.println("switch(2)");
@@ -115,6 +116,7 @@ if(true or false){if then절}
             System.out.println("one");
         case 2:
             System.out.println("two");
+		break;
         case 3:
             System.out.println("three");
         }
@@ -127,4 +129,62 @@ if(true or false){if then절}
             System.out.println("two");
         case 3:
             System.out.println("three");
-        }//스위치문
+        }//스위치문 break; 필요 왜냐면 케이스1이 실행되면 2,3등 숫자이상의 케이스가 실행되기때문
+default는 일치하는게 없을경우 출력해줌
+스위치문은 byte,short,char,int,enum,String,Character,Byte,Short,Integer 데이터 타입만가능(실수 불가능)
+논리연산자 and && or || 부정은 ! 다르다는 != 다르다는 비교연산자임 not즉 i는 대상 앞에 쓰고 i= 대상과 대상의 비교에 씀 !true, true != false
+while(조건)
+{반복 실행 영역} 무한반복문을 중지하려면 빨간ㅁ모양 버튼을 선택하거나 cmd콘솔에서는 컨트롤+c를 사용해 중지할수 있다.
+자바실행시 프로세스하나는 자바, 나머지하나는 이클립스(자바)
+
+for문 
+for(초기화; 종료조건;반복실행){
+반복적으로 실행될구문
+}
+break문
+     for (int i = 0; i < 10; i++) {
+            if (i == 5)
+                {break;}
+            System.out.println("Coding Everybody " + i);
+        }//{break;}에서 {}안이 한줄짜리면 생략가능 5부터 출력안됨
+continue문
+   for (int i = 0; i < 10; i++) {
+            if (i == 5)
+                continue;
+            System.out.println("Coding Everybody " + i);
+        }// 5즉 5와 매치되는 출력값이 실행안되고 즉 생략되고 6부터실행
+
+      for (int i = 0; i < 10; i++) {
+            for (int j = 0; j < 10; j++) {
+                System.out.println(i + "" + j);
+            }
+        }이중for문 ""때문에 1+1이아닌 11,12,13씩으로 올라감
+
+String[] classGroup = { "최진혁", "최유빈", "한이람", "이고잉" };
+        System.out.println(classGroup[0]);
+        System.out.println(classGroup[1]);
+        System.out.println(classGroup[2]);
+        System.out.println(classGroup[3]);
+//배열 string[]는 문자열(배열!)을 정의하겠다는거임 배열정의시 데이터타입앞에 []<-index인덱스라고불림
+
+        String[] classGroup = new String[4];
+        classGroup[0] = "최진혁";
+        System.out.println(classGroup.length);
+        classGroup[1] = "최유빈";
+        System.out.println(classGroup.length);
+        classGroup[2] = "한이람";
+        System.out.println(classGroup.length);
+        classGroup[3] = "이고잉";
+        System.out.println(classGroup.length);// new String[4]는 배열이 4개가 들어갈 공간이 있다는뜻 (현재 담겼다는 뜻은아님) .length는 데이터길이(배열이 몇개값가지고있는지)
+new는 전용api String[4]에서 몇개 배열이 담기는지 [갯수]를 꼭적어줘야함
+
+
+        String[] members = { "최진혁", "최유빈", "한이람" };
+        for (int i = 0; i < members.length; i++) {
+            String member = members[i];
+            System.out.println(member + "이 상담을 받았습니다");
+        }//루프 어레이 응용 멤버즈 길이는3
+
+ String[] members = { "최진혁", "최유빈", "한이람" };
+        for (String e : members) {
+            System.out.println(e + "이 상담을 받았습니다");// String e: members를 쓰면 members의 각 배열변수[0],[1],[2]가 e에 담긴다.
