@@ -235,3 +235,64 @@ public class method1 {
     }
 }
 }//출력값이 있는 메소드 사용법 
+
+
+java -cp bin org.opentutorials.javatutorials.io.inputoutputtes 3//cmd자바 실행 (-cp는 클래스파일실행 bin은 실행파일,입력값은 스페이스띄우고)
+
+package org.opentutorials.javatutorials.io;
+
+public class argstes {
+
+		    public static void main(String[] args){
+		        for(String e : args){
+		            System.out.println(e);
+		        }
+		    }
+		
+	}//자바의 scanf 입력 사용법 for문은 for each문임(배열담는 문법 one two를 담으면 one two 출력) run config사용
+
+import java.util.Scanner;
+
+public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		  Scanner sc = new Scanner(System.in);//scanner 클래스 패키지(라이브러리)사용
+	        int i = sc.nextInt(); //입력값을 엔터치기 전까지 실행되는 곳 엔터치면 int i=이 실행되어 대입됨 Nextint는 숫자값을 입력받는다는 메소드
+	        System.out.println(i*1000);
+	        sc.close();
+	    }
+}//args사용이 아닌 scanner 패키지로 입력값 받기 System.in자리에 파일 메소드를 쓰면 타자로 치는 입력값이아닌 파일로된 입력값을 받을수 있음
+
+import java.util.Scanner;
+ 
+public class Scanner2Demo {
+ 
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        while(sc.hasNextInt()) {
+            System.out.println(sc.nextInt()*1000); 
+        }
+        sc.close();
+    }
+ 
+}//반복 입력문 hasNextint는 숫자값을 입력받으면 TRUE 그외 문자등을 받으면 FALSE가 되므로 숫자값을 입력받으면 while에 의해 반복됨 
+
+import java.util.Scanner;
+import java.io.*;
+ 
+public class Scanner3Demo {
+ 
+    public static void main(String[] args) {
+        try {
+            File file = new File("out.txt");
+            Scanner sc = new Scanner(file);
+            while(sc.hasNextInt()) {
+                System.out.println(sc.nextInt()*1000); 
+            }
+            sc.close();
+        } catch(FileNotFoundException e){
+            e.printStackTrace();
+        }
+         
+    }
+ 
+}//파일 입력 사용법 try, catch는 만약 파일을 못찾는 예외상황에서 파일에러를 출력하라는 뜻
