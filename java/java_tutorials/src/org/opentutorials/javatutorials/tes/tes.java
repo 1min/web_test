@@ -1,11 +1,15 @@
 package org.opentutorials.javatutorials.tes;
-
+ 
 public class tes {
 
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		double a=1f;
-		System.out.print(a);
-	}
-
+    public static String[] getMembers() {
+        String[] members = { "ÃÖÁøÇõ", "ÃÖÀ¯ºó", "ÇÑÀÌ¶÷" };
+        return members;
+    }
+ 
+    public static void main(String[] args) {
+        String[] members = getMembers();
+    System.out.print(members[2]);
+    }
+ 
 }
