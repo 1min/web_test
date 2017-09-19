@@ -24,6 +24,7 @@ public class Myframe extends JFrame {
 		label2.setText("¼·¾¾¿Âµµ");
 		JTextField input2 = new JTextField(20);
 		JButton button = new JButton("º¯È¯");
+		this.add(panel);
 		panel.add(label1);
 		panel.add(input);
 		panel.add(label2);

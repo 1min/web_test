@@ -12,7 +12,7 @@ import javax.swing.JTextField;
 
 public class pizza_man extends JFrame {
 	public pizza_man() {
-		Toolkit kit = Toolkit.getDefaultToolkit();
+		Toolkit kit = Toolkit.getDefaultToolkit();//스크린정보가져오기
 		Dimension screen_size = kit.getScreenSize();
 		this.setTitle("pizza_man");
 		this.setSize(500,500);
