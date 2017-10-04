@@ -1,0 +1,57 @@
+자바 스크립트 데이터 타입
+숫자 number
+문자열 string
+불린 boolean
+함수 function
+객체 object
+undefined
+null
+배열 array
+날짜 date
+정규표현식 regular expression
+
+scope 범위
+전역변수앞에 var를 붙이지 않으면 함수가 실행될시 전역 값이 바뀐다.
+
+연산자 operator
+{산술arithmetic
+할당 assignment
+비교comparison
+논리 logical
+비트 bitwise
+
+인자 argument 단축 (arg)
+단항 unary}
+
+비교연산자
+==같은
+alert(1=='1');              //true
+alert(1==='1');             //false
+===(값,객체타입(데이터타입)모두)같은
+alert(null == undefined);       //true
+alert(null === undefined);      //false
+!=같지않은
+>=같거나 더큰
+<=같거나더작은
+논리연산자
+! NOT
+||
+&&
+비트연산자
+& and
+| or
+~ NOT
+^ XOR
+<< 왼쪽으로 시프트
+>> 오른쪽으로 시프트
+
+truthy 와 falsy
+
+undefined //false
+null //false
+boolean // 참은 true 거짓은 false
+number // +0,-0,NaN는 false, 그밖에는 모두 true
+string // 빈문자열(길이가0)이면 false, 그외(길이 1이상)이면 true
+object // true
+
+NaN은 0을0으로 나눌때 나머지를 말한다. (계산할 수 없음)
