@@ -183,3 +183,53 @@ alert(li);//오름차순정렬 크기순서!
 var li = ['c', 'e', 'a', 'b', 'd'];
 li.reverse();
 alert(li);//역순순정렬 크기순서아님! 출력값 d b a e c 내림차순하려면 li.sort;li.reverse;
+=========================================================
+var grades = {'egoing': 10, 'k8805': 6, 'sorialgi': 80};//객체생성
+'egoing'은 인덱스 키 10은 value
+
+var grades = new Object();
+grades['egoing'] = 10;
+grades['k8805'] = 6;
+grades['sorialgi'] = 80;//다른방법
+
+var grades = {};
+grades['egoing'] = 10;
+grades['k8805'] = 6;
+grades['sorialgi'] = 80;//또다른방법
+grades['egoin'+'n']으로 값을 불려올수도 있고
+grades['egoing']//egoing의 밸류값 가져오기 10도 도출
+또는 grades.egoing//으로 해도됨
+
+var grades = {'egoing': 10, 'k8805': 6, 'sorialgi': 80};
+for(key in grades) {//key in grades(객체)는 문법 객체안의 값들을 key값을 key에 담음
+    document.write("key : "+key+" value : "+grades[key]+"<br />");
+}//배열값 가져오기
+var grades = {'egoing': 10, 'k8805': 6, 'sorialgi': 80};
+for(key in grades) {
+    document.write("<li>key : "+key+" value : "+grades[key]+"</li>");
+}//html에서 자바스크립트로 리스트만들기
+for(var name in arr){
+console.log(arr[name]);
+}//배열에서 in사용
+var grades = {
+    'list': {'egoing': 10, 'k8805': 6, 'sorialgi': 80},
+    'show' : function(){
+        for(var name in this.list){
+            document.write(name+':'+this.list[name]+"<br />");
+        }
+    } this.키는 키안에 담긴걸 불러옴(키안의 키와 값)
+};
+grades.show();//객체안에 객체
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <script src="greeting.js"></script>
+</head>
+<body>
+    <script>
+        alert(welcome());
+    </script>
+</body>
+</html>//자바스크립트js파일(모듈)불러오기

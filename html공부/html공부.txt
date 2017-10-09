@@ -1,0 +1,105 @@
+p태그 단락구분 <p> </p>
+br태그 줄바꿈<br>
+img태그 이미지태그 <img src="소스파일" height="높이" width"너비" alt="대체정보" title="툴팁정보">//높이기준. 즉 높이적으면 너비안적어도 정사각형
+폼만들기
+<p>아이디:<input type="text//문자">//input 태그는 ㅁ입력창 생성</p> p태그는 정리 장식용
+type="password"로하면 암호화가됨 //ㄱㄴㄷㄹ=>****
+type="submit"으로하면 제출버튼이 생성됨//ㅣ제출ㅣ
+
+<form action="php주소">//해당주소로 전송 php주소뒤에 해당 폼값이 붙어서 주소가 호출됨
+input을 감쌈
+</form>
+각 인풋을 구분하기위해 
+type뒤에 name="id//아무거나값"을 부여함
+
+입력창폼(텍스트필드)에 기본적으로 뭔가 적혀있게하려면 input 태그 속성으로 value="넣을글자"
+입력창폼을 여러줄받으려면
+<textarea cols="컬럼수(글자수)" rows="줄수">텍스트 에어리어는 value 대신
+ 여기다가 적음</textarea>
+
+
+
+
+<select name="color"//php에 컬러네임으로 주소>
+ <option value="red"//밸류는 주소에 보내주기위한용도>붉은색</option>
+ <option value="black">검은색</option>
+ <option value="blue">파란색</option>
+</select>// 붉은색 ㅜ (선택,콤보상자로 변환 붉은색,검은색,파란색 3가지중 택1 선택가능)이것또한 input type submit과 전체를 폼으로 묶어서 서버전송가능
+
+<select name="color2" multiple(//멀티플은 다중선택가능하게해줌,컨트롤 클릭)//php에 컬러네임으로 주소>
+ <option value="red"//밸류는 주소에 보내주기위한용도>붉은색</option>
+ <option value="black">검은색</option>
+ <option value="blue">파란색</option>
+</select>
+
+버튼 submit에도 value="(이름)"가능
+submit 버튼외에도
+<input type = "button" value="버튼" onclick="alert('hello world')">자바스크립트와 호환되는 버튼도 사용가능
+<input type= "reset">사용자가 입력한 정보 초기화
+<input type="hidden" name="hide" value="egoing"//서버에만 보내고 표시안할때사용 네임과 값egoing을 주소로 보내주지만 주소록외에 화면에 표시안됨
+
+레이블// 맨위의 텍스트폼앞에 설명 : 란에 어떤 폼의 레이블인지 알게해주고 클릭시 해당 폼에 입력커서를 띄워줌 클릭시 id에 id="password"라는 값이 있을경우 레이블 클릭시 글 띄워줌
+<label for=id_txt//또는"password">text</label>
+해당 폼 버튼 포함해서 감싸줄수도 있다 즉 폼버튼을 레이블로 묶어줄수도있다
+
+새로운버튼 
+<label><input type="checkbox" name="color" value="red">붉은색 </label>
+
+<form action = "주소" method="post"//get이 디폴트post방식으로 바꾸면 url안바뀜 즉 패스워드 아이디 보호>
+<input type = "text" name="id">
+<input type = "submit">
+</form>
+
+파일업로드
+<form action="전송위치 즉 서버 예시 http://localhost/upload.php" method="post" enctype="multipart/form-data//파일올릴시 무조건 포스트+멀티파트/폼데이터"> 자바나 파이썬 등 같은원리
+<input type="file" name="profile">//파일업로드용 파일name이 있어야 전송가능
+<input type type="submit">
+
+메타데이터
+<meta charset="utf-8"//인코딩 name="description//설명" content="생활코딩의 소개자료//요약자료">
+<meta name ="keywords" content="코딩,php,html등등">
+<meta name = "author" contetn="egoing">
+<meta http-equiv="refresh" content="30">//30초간격으로 새로고침됨
+
+시멘틱 태그
+
+article	본문
+aside	광고와 같이 페이지의 내용과는 관계가 적은 내용들
+details	기본적으로 표시되지 화면에 표시되지 않는 정보들을 정의
+figure	삽화나 다이어그램과 같은 부가적인 요소를 정의
+footer	화면의 하단에 위치하는 사이트나 문서의 전체적인 정보를 정의
+header	화면의 상단에 위치하는 사이트나 문서의 전체적인 정보를 정의
+main	문서에서 가장 중심이 되는 컨텐츠를 정의
+mark	참조나 하이라이트 표시를 필요로 하는 문자를 정의
+nav	문서의 네비게이션 항목을 정의
+section	문서의 구획들을 정의 (참고)
+time	시간을 정의
+
+모바일환경으로 호환
+<meta name="viewport" content="width=device-width,initial=1.0">
+
+iframe 외부문서삽입
+<iframe src="http://opentutorials.org" width="500" heigt="500"></iframe>
+아이프레임보안
+<iframe src="iframe_source.html" frameborder="0" sandbox//외부 자바스크립트 실행금지 즉 보안></iframe>
+
+비디오삽입
+<video width="400" controls ><source src="videos/small.mp4"></video>
+자동채우기(이전 입력기록을 받아서)
+<form action="php주소" autocomplete="on"> 어떤폼만 자동채우기 안쓰려면
+<input type = "text" name="id "autocomplete="off">하면됨
+안내문 속성
+<input placeholder="아이디를 입력해주세요">
+
+마우스커서 자동올리기
+<input autofocus>
+입력값 체크 속성
+<input type="email">
+필수적으로입력 속성
+<input required >
+정규표현식(패턴)
+<input pattern="[a-zA-Z]//첫문자알파벳">
+<input pattern="[a-zA-Z].//첫문자알파벳 두번째문자 아무거나">
+<input pattern="[a-zA-Z].+//첫문자알파벳 두번째문자부터 아무거나 전부다">
+<input pattern="[a-zA-Z].[0-9]"//첫문자알파벳" 그이후로 아무문자, 마지막문자는 숫자>
+
