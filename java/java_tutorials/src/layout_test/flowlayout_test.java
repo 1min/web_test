@@ -14,7 +14,7 @@ public flowlayout_test() {
 	this.setTitle("플로우레이아웃");
 	this.setSize(600,600);
 	this.setLocation(200, 200);
-	JPanel panel = new JPanel(new FlowLayout(FlowLayout.TRAILING,20,20));
+	JPanel panel = new JPanel(new FlowLayout(FlowLayout.TRAILING,20,20));//trailing 창의 오른쪽
 	panel.applyComponentOrientation(ComponentOrientation.RIGHT_TO_LEFT);
 	JButton[] button=new JButton[5];
 	for(int i=0;i<5;i++)

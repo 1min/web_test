@@ -14,7 +14,7 @@ public class borderlayout_test extends JFrame {
 	this.setLocation(200, 200);
 	
 	JPanel panel = new JPanel();
-			panel.setLayout(new BorderLayout(20,20));
+	panel.setLayout(new BorderLayout(20,20));
 	JButton button[]= new JButton[5];
 	for(int i=0;i<5;i++)
 	{

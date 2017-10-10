@@ -10,7 +10,7 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
-public class eventtest3 extends JFrame implements ActionListener{
+public class eventtest3 extends JFrame implements ActionListener{//이벤트중 가장편한방법
 	JLabel label;
 	JButton button;
 public eventtest3() {
@@ -36,6 +36,7 @@ public eventtest3() {
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
 		label.setText("마침내버튼이클릭되었습니다");
+		button.setText("클릭완료");
 	}
 
 }
