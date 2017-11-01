@@ -44,11 +44,11 @@ void main0(void){
 		printf("%3d",data[i]);
 	}
 
-	void main4(){
+	void main10(){
 		int i,j,data[] = {78,55,99,75,84,39,67,98,87,100};
-		int temp=0;
+		int temp=0; //생성자 안줘도 딱히 무상관
 
-	for(j=0;j<9;j++){
+	for(j=0;j<9-j;j++){
 		for(i=0;i<9;i++){
 			if(data[i]>data[i+1])
 			{
@@ -63,11 +63,11 @@ void main0(void){
 			printf("%3d",data[i]);
 	}
 	
-	void main5(){
+	void main11(){
 		char d[6]="hello";//o끝에 널이란게 감춰져되있음
 		char c[6]={'h','e','\0','l','l','o'}; //\0은 여기까지 이외의 배열원소 생략
 		char f[9];//한글이름은 한글자당 2비트 그리고 한글이름은  4한글글자 받을수 있고 null한칸
-
+		printf("%s",c);
 		printf("이름을 입력하시오");
 		scanf("%s",f); //&를 배열을 안써도됨 배열은 배열의 이름이 주소의 역할을함
 	//gets(name)gets는 빈칸이 들어갈수 있다. scanf는 빈칸 불가능 

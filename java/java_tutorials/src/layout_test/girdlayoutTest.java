@@ -9,9 +9,9 @@ import javax.swing.JPanel;
 import javax.swing.SwingConstants;
 
 public class girdlayoutTest extends JFrame{
-public girdlayoutTest(Dimension d) {
+public girdlayoutTest() {
 	this.setTitle("그리드레이아웃");
-	this.setSize(d);
+	this.setSize(300,300);
 	this.setLocation(200, 200);
 	JPanel panel = new JPanel(new GridLayout(0,1,10,10));
 	JButton[] button=new JButton[5];
@@ -26,7 +26,7 @@ public girdlayoutTest(Dimension d) {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		girdlayoutTest f = new girdlayoutTest(new Dimension(300,300));
+		girdlayoutTest f = new girdlayoutTest();
 	}
 
 }

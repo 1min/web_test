@@ -20,7 +20,7 @@ public class borderlayout_test extends JFrame {
 	{
 		button[i]=new JButton( "¹öÆ°"+(i+1));
 	}
-	panel.add(button[0],BorderLayout.PAGE_START);
+	panel.add(button[0],BorderLayout.NORTH);
 	panel.add(button[1],BorderLayout.LINE_START);
 	panel.add(button[2],BorderLayout.CENTER);
 	panel.add(button[3],BorderLayout.EAST);

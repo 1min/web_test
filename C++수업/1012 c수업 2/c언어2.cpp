@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 void main(){
-	char c[10];
+	char c[9];
 	int i;
 	printf("문자열입력");
 	scanf("%s",c);

@@ -1,6 +1,6 @@
 #include <stdio.h>
 #define size 5//size 5로 초기화
-void main1(){
+void main(){
 int kor[size]={95,85,70,90,95}; //국어점수
 int math[size]={70,90,85,80,100};//수학점수
 int rank[size],i,j;//랭크
@@ -27,7 +27,7 @@ printf("====================\n");
 #define row 2
 #define col 3
 
-void main(){ //행렬 덧셈 2차원 배열 실습
+void main1(){ //행렬 덧셈 2차원 배열 실습
 	int matA[row][col]={{9,4,7},{2,8,4}};
 	int matB[][col]={3,7,1,8,4,-5};
 	int matC[row][col],i,j;
