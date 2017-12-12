@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN"
+    "http://www.ibatis.com/dtd/sql-map-2.dtd">
+    
+  <sqlMap namespace="BOOK">
+    
+    <select id="SELECT_BOOK" parameterClass="hashmap" resultClass="bean.Book">
+  	SELECT BOOK_NO AS bookNo
+  	     , IFNULL(BOOK_NM,'') AS bookNm
+  	     , IFNULL(RENT_YN,'') AS rentYn
+  	     , IFNULL(RENT_NM,'') AS rentNm
+  	     , INSERT_DT AS insertDt
+  	  FROM BOOK
+  	 WHERE 1=1
+  	  <isNotEmpty property="searchBookNm">
+  	  	AND BOOK_NM LIKE CONCAT('%',#searchBookNm#,'%');
+  	  </isNotEmpty>
+  </select>
+    
+    <insert id ="INSERT_BOOK" parameterClass="bean.Book">
+    	INSERT INTO BOOK (BOOK_NO,BOOK_NM,RENT_YN,RENT_NM,INSERT_DT)
+    	VALUES (#bookNo#,#bookNm#,'','',now())
+    </insert>
+   
+   <delete id = "DELETE_BOOK" parameterClass="bean.Book">
+   DELETE FROM BOOK
+   WHERE BOOK_NO=#bookNo#
+   </delete>
+   
+   <update id = "UPDATE_BOOK" parameterClass="bean.Book">
+   UPDATE BOOK SET
+   BOOK_NM=#bookNm#,
+   RENT_YN=#rentYn#,
+   RENT_NM = #rentNm#
+   WHERE BOOK_NO = #bookNo#
+   </update>
+   
+  </sqlMap>
